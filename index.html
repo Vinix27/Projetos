@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forca TV 32"</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app" aria-live="polite">
+    <header class="topbar">
+      <h1>Jogo da Forca</h1>
+      <div class="scoreboard">
+        <span>Vitórias: <strong id="wins">0</strong></span>
+        <span>Derrotas: <strong id="losses">0</strong></span>
+      </div>
+    </header>
+
+    <section class="layout">
+      <div class="gallows" aria-hidden="true">
+        <pre id="hangmanAscii"></pre>
+      </div>
+
+      <div class="game-panel">
+        <p id="hint" class="hint"></p>
+        <p id="word" class="word" aria-label="Palavra"></p>
+        <p id="status" class="status">Use o controle remoto (setas + OK) ou teclado.</p>
+
+        <div id="keyboard" class="keyboard" role="grid" aria-label="Teclado virtual"></div>
+
+        <div class="actions">
+          <button id="newGameBtn" class="btn">Nova palavra</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
