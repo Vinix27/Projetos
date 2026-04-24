@@ -1,0 +1,149 @@
+:root {
+  color-scheme: dark;
+  --bg: #0d1b2a;
+  --panel: #1b263b;
+  --accent: #00b4d8;
+  --accent-2: #90e0ef;
+  --text: #e0fbfc;
+  --danger: #ff6b6b;
+  --ok: #57cc99;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #0d1b2a 0%, #1b263b 100%);
+  color: var(--text);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.scoreboard {
+  display: flex;
+  gap: 16px;
+  font-size: 1.2rem;
+}
+
+.layout {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.gallows {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  min-height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#hangmanAscii {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.35;
+}
+
+.game-panel {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+}
+
+.hint,
+.status {
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+
+.word {
+  letter-spacing: 0.35rem;
+  font-size: 2.2rem;
+  margin: 12px 0 18px;
+  min-height: 2.5rem;
+}
+
+.keyboard {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(56px, 1fr));
+  gap: 10px;
+}
+
+.key {
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  min-height: 56px;
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+.key.focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.35);
+}
+
+.key.correct {
+  background: rgba(87, 204, 153, 0.3);
+  border-color: var(--ok);
+}
+
+.key.wrong {
+  background: rgba(255, 107, 107, 0.3);
+  border-color: var(--danger);
+}
+
+.key:disabled {
+  opacity: 0.7;
+}
+
+.actions {
+  margin-top: 16px;
+}
+
+.btn {
+  min-height: 52px;
+  padding: 0 18px;
+  border-radius: 10px;
+  border: 0;
+  background: var(--accent);
+  color: #001219;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .keyboard {
+    grid-template-columns: repeat(6, minmax(52px, 1fr));
+  }
+}
